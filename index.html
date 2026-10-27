@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scacchi contro AI</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div>
+        <p class="eyebrow">SFIDA ONLINE</p>
+        <h1>Scacchi contro AI</h1>
+        <p class="sub">Tu giochi con i bianchi. L'AI risponde con i neri.</p>
+      </div>
+      <span class="pill">Beta</span>
+    </header>
+
+    <section class="game">
+      <div class="board-wrap">
+        <div id="status" class="status" role="status">Caricamento partita…</div>
+        <div id="board" class="board" aria-label="Scacchiera"></div>
+        <div class="controls">
+          <button id="confirm" disabled>Conferma mossa</button>
+          <button id="cancel" class="secondary" disabled>Annulla</button>
+          <button id="restart" class="secondary">Nuova partita</button>
+        </div>
+      </div>
+      <aside>
+        <h2>Partita</h2>
+        <label for="engine">Motore</label>
+        <select id="engine">
+          <option value="stockfish" selected>Stockfish 19 · motore scacchistico</option>
+          <option value="openai">OpenAI · AI conversazionale</option>
+        </select>
+        <label for="level" class="level-label">Stile OpenAI</label>
+        <select id="level">
+          <option value="prudente">Prudente</option>
+          <option value="forte" selected>Forte</option>
+          <option value="aggressivo">Aggressivo</option>
+        </select>
+        <h3>Ultima risposta</h3>
+        <p id="comment" class="comment">Fai la prima mossa.</p>
+        <h3>Registro mosse</h3>
+        <ol id="moves" class="moves"></ol>
+        <p class="note">Stockfish calcola le mosse sul dispositivo. La modalità OpenAI usa un modello linguistico e non garantisce un ELO specifico.</p>
+      </aside>
+    </section>
+    <footer>Prototipo locale · Le mosse vengono verificate prima di essere applicate.</footer>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

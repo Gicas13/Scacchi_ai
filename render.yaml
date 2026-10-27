@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: scacchi-ai
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: OPENAI_MODEL
+        value: gpt-6-astra
+      - key: OPENAI_API_KEY
+        sync: false
